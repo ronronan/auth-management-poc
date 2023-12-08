@@ -1,0 +1,23 @@
+http:
+  routers:
+    portail:
+      entryPoints:
+        - "web"
+      rule: Host(`portail.localhost`)
+      service: "portail"
+      tls: false
+    api-manager:
+      entryPoints:
+        - "web"
+      rule: Host(`api-manager.localhost`)
+      service: "api-manager"
+      tls: false
+  services:
+    portail:
+      loadBalancer:
+        servers:
+          - url: "http://172.27.208.172:9999"
+    api-manager:
+      loadBalancer:
+        servers:
+          - url: "http://172.27.208.172:3000"

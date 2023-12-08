@@ -60,6 +60,7 @@ services:
       - "80:80"
     volumes:
       - "./traefik/traefik.yaml:/etc/traefik/traefik.yml:ro"
+      - "./traefik/dynamic.yaml:/etc/traefik/dynamic.yml:ro"
       - "/var/run/docker.sock:/var/run/docker.sock"
     labels:
       traefik.enable: "true"
