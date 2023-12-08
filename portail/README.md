@@ -1,35 +1,30 @@
-# portail
+# Portail
 
-This template should help get you started developing with Vue 3 in Vite.
+## Pré-requis
 
-## Recommended IDE Setup
+- Si ce n'est pas déjà le cas, [installer Volta](https://volta.sh/),
+- Ou la version correspondante à Node (voir `package.json`).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Development
 
-## Customize configuration
+```bash
+cp .env.example .env
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Installation des dépendances
 
-## Project Setup
-
-```sh
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Lancement en local
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Lint
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+```bash
 npm run lint
 ```
