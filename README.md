@@ -4,6 +4,7 @@
 
 - Docker
 - Docker compose v2
+- Volta.js (Node.js and NPM)
 
 
 ## Launching necessary stack
