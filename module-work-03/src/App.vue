@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Portail</h1>
+    <h1>Module work 03</h1>
   </header>
 
   <main>{{ userInfo }}</main>
