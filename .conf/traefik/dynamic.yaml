@@ -12,6 +12,30 @@ http:
       rule: Host(`api-manager.localhost`)
       service: "api-manager"
       tls: false
+    module-work01:
+      entryPoints:
+        - "web"
+      rule: Host(`work01.localhost`)
+      service: "module-work01"
+      tls: false
+    module-work02:
+      entryPoints:
+        - "web"
+      rule: Host(`work02.localhost`)
+      service: "module-work02"
+      tls: false
+    module-work03:
+      entryPoints:
+        - "web"
+      rule: Host(`work03.localhost`)
+      service: "module-work03"
+      tls: false
+    module-admin:
+      entryPoints:
+        - "web"
+      rule: Host(`admin.localhost`)
+      service: "module-admin"
+      tls: false
   services:
     portail:
       loadBalancer:
@@ -21,3 +45,20 @@ http:
       loadBalancer:
         servers:
           - url: "http://172.27.208.172:3000"
+    module-work01:
+      loadBalancer:
+        servers:
+          - url: "http://172.27.208.172:9998"
+    module-work02:
+      loadBalancer:
+        servers:
+          - url: "http://172.27.208.172:9997"
+    module-work03:
+      loadBalancer:
+        servers:
+          - url: "http://172.27.208.172:9996"
+    module-admin:
+      loadBalancer:
+        servers:
+          - url: "http://172.27.208.172:9995"
+
