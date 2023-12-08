@@ -9,9 +9,7 @@
 ## Launching necessary stack
 
 ```sh
-cd configurator
-docker compose up -d postgres traefik
-# Wait 5 seconds
+cd .conf
 docker compose up -d
 ```
 

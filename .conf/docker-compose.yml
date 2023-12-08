@@ -1,3 +1,4 @@
+name: auth-poc
 services:
   postgres:
     image: postgres:16.1
@@ -11,6 +12,11 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
       - ./postgres/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - auth-poc
   keycloak:
@@ -28,7 +34,8 @@ services:
       KC_HOSTNAME_ADMIN: keycloak.localhost
       KC_HTTP_ENABLED: true
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     expose:
       - "8080"
     command: start-dev
