@@ -1,4 +1,4 @@
-# POC (Proof of concept) on authentication management with Keycloak API
+# POC on authentication management with Keycloak API
 
 ## Requirements
 
